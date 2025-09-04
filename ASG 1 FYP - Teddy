@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main ()
+{
+	int a;
+	int b;
+	printf("Input nilai Length = ");
+	scanf("%d", &a);
+	printf("Input nilai width = ");
+	scanf("%d", &b);
+	
+	int c = a*b;
+	
+	printf("Hasil areanya adalah = %d", c);	
+	
+	
+	
+	
+	
+	return 0;
+}
