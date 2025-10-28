@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teddy Tanjaya — Student Computer Science | Portfolio</title>
+
+  <!-- ✅ META SEO -->
+  <meta name="description" content="Teddy Tanjaya — Student Computer Science. Portfolio pribadi dengan desain modern, responsif, dan bilingual (ID/EN)." />
+  <meta name="keywords" content="Teddy Tanjaya, portfolio, computer science, web developer, mahasiswa IT, teknologi, desain web, Indonesia" />
+  <meta name="author" content="Teddy Tanjaya" />
+  <meta name="theme-color" content="#e8f1ff" />
+
+  <!-- ✅ OG (Open Graph for social media) - points to preview_1200x630.jpg in same folder -->
+  <meta property="og:title" content="Teddy Tanjaya — Student Computer Science" />
+  <meta property="og:description" content="Portfolio pribadi Teddy Tanjaya. Mahasiswa Computer Science yang berfokus pada teknologi dan pengembangan web." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="preview_1200x630.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+
+  <!-- ✅ JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Teddy Tanjaya",
+    "jobTitle": "Computer Science Student",
+    "url": "https://yourdomain.com",
+    "sameAs": [
+      "https://github.com/username",
+      "https://linkedin.com/in/username"
+    ],
+    "description": "Mahasiswa Computer Science yang suka membuat website dan menjelajahi dunia IT."
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg1: #e9f2ff;
+      --bg2: #a4c8ff; /* kamu pilih opsi 2: putih -> biru medium elegan */
+      --glass: rgba(255, 255, 255, 0.6);
+      --text: #0d1b2a;
+      --muted: #5a6b7b;
+      --accent: #007bff;
+      --radius: 14px;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      font-family: "Inter", system-ui, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Reset + base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg1), var(--bg2));
+      color: var(--text);
+      padding: 24px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap { max-width: 1100px; margin: auto; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--glass);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px 18px; margin-bottom: 30px;
+    }
+
+    .avatar {
+      width: 60px; height: 60px; border-radius: 12px;
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 22px;
+      transition: transform 0.3s ease;
+    }
+    .avatar:hover { transform: scale(1.05) rotate(-2deg); }
+
+    .title { font-size: 18px; font-weight: 700; }
+    .subtitle { font-size: 14px; color: var(--muted); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 16px;
+      transition: color 0.18s ease;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: flex; align-items:center;
+      background: rgba(255,255,255,0.65);
+      border-radius: 10px; overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .lang-toggle button {
+      border: none; background: transparent; padding: 8px 10px;
+      cursor: pointer; font-weight: 700; color: var(--muted);
+      display:flex;gap:8px;align-items:center;
+    }
+    .lang-toggle button.active { background: var(--accent); color: white; }
+
+    /* small flag icons (inline svgs) style */
+    .flag { width:18px;height:12px; display:inline-block; flex-shrink:0; border-radius:2px; }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 30px;
+      align-items: center;
+    }
+    .hero h1 { font-size: 34px; margin: 0 0 8px 0; }
+    .hero p { color: var(--muted); line-height: 1.6; white-space: pre-line; }
+
+    .card {
+      background: rgba(255,255,255,0.65);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+    }
+
+    /* profile photo inside card */
+    .profile-photo {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom:12px;
+    }
+
+    .card h3 { margin:8px 0 6px; }
+    .card p { margin:0;color:var(--muted) }
+
+    .btn {
+      display: inline-block; padding: 10px 16px; border-radius: 10px;
+      background: var(--accent); color: white; font-weight: 600; text-decoration: none;
+      transition: transform 0.22s ease;
+    }
+    .btn:hover { transform: translateY(-3px); }
+
+    section { margin-top: 38px; }
+
+    .chips { display:flex; gap:8px; flex-wrap:wrap; }
+    .chip {
+      padding:6px 10px; border-radius:999px; background: rgba(0,0,0,0.05); font-size:13px;
+    }
+
+    footer { margin-top:40px; text-align:center; color:var(--muted); font-size:13px; }
+
+    /* reveal animation (fade + slide) */
+    .reveal { opacity: 0; transform: translateY(14px); transition: all .6s cubic-bezier(.2,.9,.2,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; text-align:center; }
+      .profile-photo { height: 320px; }
+      nav a { margin-left:10px }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="avatar">TT</div>
+        <div>
+          <div class="title">Teddy Tanjaya</div>
+          <div class="subtitle" id="subtitle">Student Computer Science</div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:14px;">
+        <nav>
+          <a href="#about" id="nav-about">Tentang</a>
+          <a href="#projects" id="nav-projects">Proyek</a>
+          <a href="#skills" id="nav-skills">Keahlian</a>
+          <a href="#contact" id="nav-contact">Kontak</a>
+        </nav>
+
+        <!-- language toggle: small flag SVG + ID/EN -->
+        <div class="lang-toggle" role="tablist" aria-label="Language switch">
+          <button id="btn-id" class="active" aria-pressed="true">
+            <!-- Indonesia flag SVG (simple) -->
+            <svg class="flag" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <rect width="3" height="2" fill="#fff"/>
+              <rect width="3" height="1" fill="#ff0000" y="0"/>
+            </svg>
+            ID
+          </button>
+          <button id="btn-en" aria-pressed="false">
+            <!-- UK / GB flag (simplified tiny) -->
+            <svg class="flag" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+              <rect width="60" height="30" fill="#012169"/>
+              <path d="M0 0 L60 30 M60 0 L0 30" stroke="#fff" stroke-width="6"/>
+              <path d="M0 0 L60 30 M60 0 L0 30" stroke="#C8102E" stroke-width="4"/>
+              <rect x="26" width="8" height="30" fill="#fff"/>
+              <rect y="11" width="60" height="8" fill="#fff"/>
+              <rect x="27" width="6" height="30" fill="#C8102E"/>
+              <rect y="12" width="60" height="6" fill="#C8102E"/>
+            </svg>
+            EN
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="reveal" id="left-hero">
+          <h1 id="hero-name">Teddy Tanjaya</h1>
+          <p id="hero-about">
+Jurusan: Computer Science
+Minat: Suka membuat website
+Cita-cita: Menjadi seorang IT yang berkembang di pusat teknologi
+          </p>
+          <p style="margin-top:14px">
+            <a href="#projects" class="btn" id="btn-projects">Lihat Proyek</a>
+          </p>
+        </div>
+
+        <!-- RIGHT: profile card with photo -->
+        <aside class="card reveal" id="profile-card" aria-label="Profil">
+          <img src="C:\Users\user\Pictures\mewah.png" alt="Foto Teddy Tanjaya" class="profile-photo" id="profile-photo">
+          <h3>Teddy Tanjaya</h3>
+          <p id="card-desc">Mahasiswa Computer Science yang berfokus pada pengembangan web modern dan desain interaktif.</p>
+          <p style="font-size:13px;color:var(--muted);margin-top:10px">Jakarta, Indonesia</p>
+        </aside>
+      </section>
+
+      <section id="skills" class="reveal">
+        <h3 id="skills-title">Keahlian</h3>
+        <div class="chips">
+          <span class="chip">C</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal">
+        <h3 id="projects-title">Proyek</h3>
+        <div class="card">
+          <h4 id="project-title">Website Profil Sederhana</h4>
+          <p id="project-desc">Situs portfolio statis dengan desain yang mulus.</p>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal">
+        <h3 id="contact-title">Kontak</h3>
+        <p><span id="email-label">Email:</span> <strong>teddytanjaya123@gmail.com</strong></p>
+        <p><span id="phone-label">Telepon:</span> <strong>+62 812 8236 5703</strong></p>
+      </section>
+
+      <footer class="reveal">
+        © <span id="year"></span> <span id="footer-text">Teddy Tanjaya — Website ini dibuat dengan cinta</span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // small reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=> {
+      entries.forEach(e=>{
+        if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.12});
+    reveals.forEach(r=> io.observe(r));
+
+    // language toggle (ID/EN)
+    const btnID = document.getElementById('btn-id');
+    const btnEN = document.getElementById('btn-en');
+
+    const texts = {
+      subtitle: { id: "Student Computer Science", en: "Computer Science Student" },
+      navAbout: { id: "Tentang", en: "About" },
+      navProjects: { id: "Proyek", en: "Projects" },
+      navSkills: { id: "Keahlian", en: "Skills" },
+      navContact: { id: "Kontak", en: "Contact" },
+      heroName: { id: "Teddy Tanjaya", en: "Teddy Tanjaya" },
+      heroAbout: {
+        id: "Jurusan: Computer Science.\nMinat: Suka membuat website.\nCita-cita: Menjadi seorang IT yang berkembang di pusat teknologi.",
+        en: "Major: Computer Science.\nInterests: Building websites.\nAspiration: To become an IT professional in a tech hub."
+      },
+      btnProjects: { id: "Lihat Proyek", en: "View Projects" },
+      cardDesc: {
+        id: "Mahasiswa Computer Science yang berfokus pada pengembangan web modern dan desain interaktif.",
+        en: "Computer Science student focused on modern web development and interactive design."
+      },
+      skillsTitle: { id: "Keahlian", en: "Skills" },
+      projectsTitle: { id: "Proyek", en: "Projects" },
+      projectTitle: { id: "Website Profil Sederhana", en: "Simple Profile Website" },
+      projectDesc: { id: "Situs portfolio statis dengan desain yang mulus.", en: "Static portfolio site with smooth design." },
+      contactTitle: { id: "Kontak", en: "Contact" },
+      emailLabel: { id: "Email:", en: "Email:" },
+      phoneLabel: { id: "Telepon:", en: "Phone:" },
+      footerText: { id: "Teddy Tanjaya — Website ini dibuat dengan cinta", en: "Teddy Tanjaya — This website was made with love" }
+    };
+
+    function setLanguage(lang){
+      document.getElementById('subtitle').textContent = texts.subtitle[lang];
+      document.getElementById('nav-about').textContent = texts.navAbout[lang];
+      document.getElementById('nav-projects').textContent = texts.navProjects[lang];
+      document.getElementById('nav-skills').textContent = texts.navSkills[lang];
+      document.getElementById('nav-contact').textContent = texts.navContact[lang];
+      document.getElementById('hero-name').textContent = texts.heroName[lang];
+      document.getElementById('hero-about').textContent = texts.heroAbout[lang];
+      document.getElementById('btn-projects').textContent = texts.btnProjects[lang];
+      document.getElementById('card-desc').textContent = texts.cardDesc[lang];
+      document.getElementById('skills-title').textContent = texts.skillsTitle[lang];
+      document.getElementById('projects-title').textContent = texts.projectsTitle[lang];
+      document.getElementById('project-title').textContent = texts.projectTitle[lang];
+      document.getElementById('project-desc').textContent = texts.projectDesc[lang];
+      document.getElementById('contact-title').textContent = texts.contactTitle[lang];
+      document.getElementById('email-label').textContent = texts.emailLabel[lang];
+      document.getElementById('phone-label').textContent = texts.phoneLabel[lang];
+      document.getElementById('footer-text').textContent = texts.footerText[lang];
+    }
+
+    btnEN.addEventListener('click', ()=>{
+      btnEN.classList.add('active');
+      btnID.classList.remove('active');
+      btnEN.setAttribute('aria-pressed','true');
+      btnID.setAttribute('aria-pressed','false');
+      setLanguage('en');
+    });
+
+    btnID.addEventListener('click', ()=>{
+      btnID.classList.add('active');
+      btnEN.classList.remove('active');
+      btnID.setAttribute('aria-pressed','true');
+      btnEN.setAttribute('aria-pressed','false');
+      setLanguage('id');
+    });
+
+    // initial
+    document.getElementById('year').textContent = new Date().getFullYear();
+    setLanguage('id');
+  </script>
+</body>
+</html>
